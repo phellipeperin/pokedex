@@ -1,10 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.tsx';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from 'react-router-dom';
 import './index.css';
+
+import ErrorRoute from './routes/ErrorRoute.tsx';
+import PokemonListRoute from './routes/PokemonListRoute.tsx';
+import PokemonRoute, { routeLoader as pokemonRouteLoader } from './routes/PokemonRoute.tsx';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <PokemonListRoute />,
+    errorElement: <ErrorRoute />
+  },
+  {
+    path: '/pokemon/:id',
+    element: <PokemonRoute />,
+    loader: pokemonRouteLoader,
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 );
