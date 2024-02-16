@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import './index.css';
 
+// Routes
 import ErrorRoute from './routes/ErrorRoute.tsx';
 import PokemonListRoute from './routes/PokemonListRoute.tsx';
 import PokemonRoute, { routeLoader as pokemonRouteLoader } from './routes/PokemonRoute.tsx';
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorRoute />
   },
   {
-    path: '/pokemon/:id',
+    path: '/pokemon/:name',
     element: <PokemonRoute />,
     loader: pokemonRouteLoader,
   },

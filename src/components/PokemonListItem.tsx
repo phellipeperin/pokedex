@@ -5,8 +5,6 @@ interface ComponentProps {
 }
 
 function PokemonListItem({ pokemon }: ComponentProps) {
-
-
     return (
         <div key={pokemon.name}>{pokemon.name}</div>
     );

@@ -1,0 +1,1 @@
+export const POKEMON_ENTRIES_STORAGE_KEY = 'dex_pokemon_entries';

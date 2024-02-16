@@ -1,10 +1,10 @@
 import { useLoaderData } from 'react-router-dom';
 import { PokeAPI } from 'pokeapi-types';
 
-import { getPokemonByNumber } from '../services/api-service';
+import { getPokemonByName } from '../services/pokemon-service';
 
 export async function routeLoader({ params }: any): Promise<PokeAPI.Pokemon> {
-  return await getPokemonByNumber(params?.id);
+  return await getPokemonByName(params?.name);
 }
 
 function PokemonRoute() {
